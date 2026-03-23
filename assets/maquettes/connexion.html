@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --yt-red: #FF0000;
+            --ios-bg: #F2F2F7;
+            --ios-label: #3A3A3C;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--ios-bg);
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-input {
+            @apply w-full bg-white border-none rounded-xl py-4 px-4 text-[17px] focus:ring-2 focus:ring-[var(--yt-red)] transition-shadow duration-200 shadow-sm;
+        }
+        .ios-btn-primary {
+            @apply w-full bg-[var(--yt-red)] text-white font-semibold py-4 rounded-xl text-[17px] active:opacity-80 transition-opacity;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col justify-center items-center p-6">
+<div class="h-10 w-full fixed top-0 left-0"></div>
+<div class="w-full max-w-sm flex flex-col items-center">
+<div class="mb-12 flex flex-col items-center">
+<div class="bg-[var(--yt-red)] p-3 rounded-2xl shadow-lg mb-4">
+<span class="material-symbols-outlined text-white text-5xl">
+                    subscriptions
+                </span>
+</div>
+<h1 class="text-3xl font-bold text-gray-900 tracking-tight">ChannelFinder</h1>
+<p class="text-gray-500 mt-2 text-center px-4">Découvrez le meilleur de YouTube par catégories.</p>
+</div>
+<form class="w-full space-y-4">
+<div class="space-y-1">
+<label class="block text-sm font-medium text-[var(--ios-label)] ml-1" for="email">Email</label>
+<div class="relative">
+<input class="ios-input" id="email" name="email" placeholder="votre@email.com" required="" type="email"/>
+</div>
+<p class="text-[var(--yt-red)] text-xs mt-1 ml-1 hidden">Veuillez entrer une adresse email valide.</p>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-center">
+<label class="block text-sm font-medium text-[var(--ios-label)] ml-1" for="password">Mot de passe</label>
+<a class="text-xs text-[var(--yt-red)] font-medium" href="#">Oublié ?</a>
+</div>
+<div class="relative">
+<input class="ios-input" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+<p class="text-gray-400 text-[11px] mt-1 ml-1">
+                    Min. 8 caractères, 1 majuscule, 1 chiffre.
+                </p>
+</div>
+<div class="pt-4">
+<button class="ios-btn-primary shadow-lg shadow-red-200" type="submit">
+                    Se connecter
+                </button>
+</div>
+</form>
+<div class="mt-8 flex flex-col items-center space-y-6">
+<div class="flex items-center space-x-2 text-gray-500 text-sm">
+<span>Pas encore de compte ?</span>
+<a class="text-[var(--yt-red)] font-semibold" href="#">S'inscrire</a>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-10 pb-4 text-center">
+<p class="text-[11px] text-gray-400">
+            En continuant, vous acceptez nos <a class="underline" href="#">Conditions d'utilisation</a> et notre <a class="underline" href="#">Politique de confidentialité</a>.
+        </p>
+</div>
+
+</body></html>
