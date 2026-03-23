@@ -12,4 +12,8 @@ export const profileUpdateSchema = z.object({
   currentPassword: z.string().optional(),
   newPassword: z.string().optional(),
   confirmPassword: z.string().optional(),
+}).refine((values) => {
+  return Boolean(values.email || values.currentPassword || values.newPassword || values.confirmPassword);
+}, {
+  message: "Aucune modification fournie.",
 });
