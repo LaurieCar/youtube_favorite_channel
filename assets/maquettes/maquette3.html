@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --ios-bg: #F2F2F7;
+            --ios-card: #FFFFFF;
+            --ios-blue: #007AFF;
+            --ios-red: #FF3B30;
+            --ios-gray: #8E8E93;
+            --ios-text: #000000;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--ios-bg);
+            color: var(--ios-text);
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-24">
+<header class="sticky top-0 z-10 ios-blur border-b border-gray-200">
+<div class="px-4 py-3 flex justify-between items-center">
+<h1 class="text-xl font-bold tracking-tight">Ma bibliothèque de catégories</h1>
+<button class="text-[var(--ios-blue)] font-medium">Profil</button>
+</div>
+</header>
+<main class="p-4 space-y-4">
+<div class="bg-[var(--ios-card)] rounded-2xl p-4 shadow-sm border border-gray-100 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-lg font-semibold">Cybersécurité</h2>
+<p class="text-sm text-[var(--ios-gray)] mt-1 italic">
+                        Mots-clés : hacking, security, malware, pentest...
+                    </p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-[var(--ios-blue)] hover:bg-blue-50 rounded-full transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-[var(--ios-red)] hover:bg-red-50 rounded-full transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<button class="w-full bg-[var(--ios-blue)] text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">search</span>
+                Rechercher le Top 5
+            </button>
+</div>
+<div class="bg-[var(--ios-card)] rounded-2xl p-4 shadow-sm border border-gray-100 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-lg font-semibold">Cuisine</h2>
+<p class="text-sm text-[var(--ios-gray)] mt-1 italic">
+                        Mots-clés : recettes, gastronomie, chef, pâtisserie...
+                    </p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-[var(--ios-blue)] hover:bg-blue-50 rounded-full transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-[var(--ios-red)] hover:bg-red-50 rounded-full transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<button class="w-full bg-[var(--ios-blue)] text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">search</span>
+                Rechercher le Top 5
+            </button>
+</div>
+<div class="bg-[var(--ios-card)] rounded-2xl p-4 shadow-sm border border-gray-100 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-lg font-semibold">Gaming</h2>
+<p class="text-sm text-[var(--ios-gray)] mt-1 italic">
+                        Mots-clés : gameplay, esports, let's play, console...
+                    </p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-[var(--ios-blue)] hover:bg-blue-50 rounded-full transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-[var(--ios-red)] hover:bg-red-50 rounded-full transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<button class="w-full bg-[var(--ios-blue)] text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">search</span>
+                Rechercher le Top 5
+            </button>
+</div>
+<div class="bg-[var(--ios-card)] rounded-2xl p-4 shadow-sm border border-gray-100 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-lg font-semibold">IA &amp; Tech</h2>
+<p class="text-sm text-[var(--ios-gray)] mt-1 italic">
+                        Mots-clés : IA, machine learning, tech news, gadgets...
+                    </p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-[var(--ios-blue)] hover:bg-blue-50 rounded-full transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-[var(--ios-red)] hover:bg-red-50 rounded-full transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<button class="w-full bg-[var(--ios-blue)] text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">search</span>
+                Rechercher le Top 5
+            </button>
+</div>
+</main>
+<button class="fixed bottom-8 right-6 w-16 h-16 bg-[var(--ios-blue)] text-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform z-20">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<nav class="fixed bottom-0 left-0 right-0 ios-blur border-t border-gray-200 h-20 px-10 flex justify-between items-start pt-2 z-10">
+<div class="flex flex-col items-center gap-1 text-[var(--ios-blue)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-[10px] font-medium">Bibliothèque</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[var(--ios-gray)]">
+<span class="material-symbols-outlined">history</span>
+<span class="text-[10px] font-medium">Découvrir</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[var(--ios-gray)]">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Profil</span>
+</div>
+</nav>
+
+</body></html>

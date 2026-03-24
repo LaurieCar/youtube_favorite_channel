@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #007AFF;
+            --bg-ios: #F2F2F7;
+            --card-ios: #FFFFFF;
+            --text-ios: #000000;
+            --text-secondary: #8E8E93;
+            --separator: #C6C6C8;
+            --danger: #FF3B30;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-ios);
+            color: var(--text-ios);
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-input-group {
+            @apply bg-[var(--card-ios)] border-y border-[var(--separator)] px-4;
+        }
+        .ios-input-row {
+            @apply flex items-center py-3 border-b border-[var(--separator)] last:border-0;
+        }
+        .ios-label {
+            @apply w-32 text-[17px] font-normal;
+        }
+        .ios-input {
+            @apply flex-1 border-0 p-0 text-[17px] focus:ring-0 placeholder:text-[#C4C4C6];
+        }
+        .ios-btn-primary {
+            @apply w-full py-3.5 bg-[var(--primary-color)] text-white rounded-xl font-semibold text-[17px] active:opacity-80 transition-opacity;
+        }
+        .ios-btn-secondary {
+            @apply w-full py-3.5 text-[var(--primary-color)] font-normal text-[17px] active:opacity-60 transition-opacity;
+        }
+        .ios-header-btn {
+            @apply text-[var(--primary-color)] font-normal text-[17px];
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 bg-[var(--bg-ios)]/80 backdrop-blur-md border-b border-[var(--separator)] px-4 h-11 flex items-center justify-between">
+<button class="ios-header-btn flex items-center">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+<span>Retour</span>
+</button>
+<h1 class="text-[17px] font-semibold">Gérer la catégorie</h1>
+<button class="ios-header-btn font-semibold">Enregistrer</button>
+</header>
+<main class="flex-1 overflow-y-auto pb-10">
+<div class="px-5 py-4">
+<div class="bg-blue-50 rounded-xl p-4 flex gap-3 border border-blue-100">
+<span class="material-symbols-outlined text-blue-500 shrink-0">info</span>
+<p class="text-[14px] leading-tight text-blue-800">
+                    Les mots-clés permettent de trouver des chaînes dont le <strong>nom</strong> contient le terme ou dont au moins <strong>5 vidéos récentes</strong> mentionnent le sujet dans leur titre.
+                </p>
+</div>
+</div>
+<form>
+<div class="ios-input-group mb-8">
+<div class="ios-input-row">
+<label class="ios-label">Nom</label>
+<input class="ios-input" placeholder="ex: Cybersécurité" type="text" value="Cybersécurité"/>
+</div>
+</div>
+<div class="px-5 mb-2">
+<h2 class="text-[13px] uppercase text-[var(--text-secondary)] tracking-wide">Mots-clés &amp; Synonymes</h2>
+</div>
+<div class="ios-input-group">
+<div class="ios-input-row">
+<input class="ios-input" placeholder="Ajouter un mot-clé..." type="text"/>
+<button class="text-[var(--primary-color)]" type="button">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+<div class="ios-input-row">
+<span class="flex-1 text-[17px]">Hacking éthique</span>
+<button class="text-[var(--danger)]" type="button">
+<span class="material-symbols-outlined">remove_circle</span>
+</button>
+</div>
+<div class="ios-input-row">
+<span class="flex-1 text-[17px]">Sécurité informatique</span>
+<button class="text-[var(--danger)]" type="button">
+<span class="material-symbols-outlined">remove_circle</span>
+</button>
+</div>
+<div class="ios-input-row">
+<span class="flex-1 text-[17px]">Pentesting</span>
+<button class="text-[var(--danger)]" type="button">
+<span class="material-symbols-outlined">remove_circle</span>
+</button>
+</div>
+</div>
+<div class="px-5 py-3">
+<p class="text-[13px] text-[var(--text-secondary)]">
+                    Ajoutez des variantes pour élargir les résultats de recherche (ex: IA, Intelligence Artificielle).
+                </p>
+</div>
+<div class="px-5 mt-8 space-y-2">
+<button class="ios-btn-primary" type="submit">
+                    Enregistrer la catégorie
+                </button>
+<button class="ios-btn-secondary" type="button">
+                    Annuler
+                </button>
+</div>
+<div class="mt-12 mb-8">
+<div class="ios-input-group">
+<button class="ios-input-row w-full text-[var(--danger)] justify-center font-normal" type="button">
+                        Supprimer la catégorie
+                    </button>
+</div>
+</div>
+</form>
+</main>
+<nav class="h-14 bg-[var(--card-ios)] border-t border-[var(--separator)] flex items-center justify-around px-2 pb-safe">
+<div class="flex flex-col items-center gap-0.5 text-[var(--text-secondary)]">
+<span class="material-symbols-outlined text-[24px]">folder</span>
+<span class="text-[10px]">Bibliothèque</span>
+</div>
+<div class="flex flex-col items-center gap-0.5 text-[var(--primary-color)]">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1">add_box</span>
+<span class="text-[10px]">Créer</span>
+</div>
+<div class="flex flex-col items-center gap-0.5 text-[var(--text-secondary)]">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[10px]">Profil</span>
+</div>
+</nav>
+
+</body></html>

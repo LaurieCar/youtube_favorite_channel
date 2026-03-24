@@ -1,0 +1,124 @@
+openapi: 3.1.0
+info:
+  title: YouTube Favorite Channel API
+  version: 0.1.0
+  description: Contrat HTTP minimal pour la V1 de l'application.
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/auth/register:
+    post:
+      summary: Créer un compte utilisateur
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+      responses:
+        "201":
+          description: Compte créé
+        "400":
+          description: Données invalides
+        "409":
+          description: Email déjà utilisé
+  /api/auth/login:
+    post:
+      summary: Authentifier un utilisateur
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        "200":
+          description: Connexion réussie
+        "401":
+          description: Identifiants invalides
+  /api/profile:
+    get:
+      summary: Lire le profil courant
+      responses:
+        "200":
+          description: Profil utilisateur
+    patch:
+      summary: Mettre à jour l'email ou le mot de passe
+      responses:
+        "200":
+          description: Profil mis à jour
+        "400":
+          description: Données invalides
+        "409":
+          description: Email déjà utilisé
+  /api/categories:
+    get:
+      summary: Lister les catégories de l'utilisateur
+      responses:
+        "200":
+          description: Liste des catégories
+    post:
+      summary: Créer une catégorie
+      responses:
+        "201":
+          description: Catégorie créée
+        "400":
+          description: Données invalides
+        "409":
+          description: Doublon de nom
+  /api/categories/{categoryId}:
+    patch:
+      summary: Modifier une catégorie
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Catégorie mise à jour
+        "404":
+          description: Catégorie introuvable
+    delete:
+      summary: Supprimer une catégorie
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Catégorie supprimée
+        "404":
+          description: Catégorie introuvable
+  /api/categories/{categoryId}/search:
+    post:
+      summary: Lancer la recherche Top 5 pour une catégorie
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Résultats trouvés ou liste vide
+        "404":
+          description: Catégorie introuvable
+        "502":
+          description: Erreur temporaire côté service YouTube
